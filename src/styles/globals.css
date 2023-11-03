@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* just to see everything */
+html, body {
+    overflow-x: hidden;
+}
