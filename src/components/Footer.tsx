@@ -12,14 +12,12 @@ const Footer = () => {
   const role = !isLoading && isLoaded && user ? user.role : "none";
 
   return (
-    <footer
-      className={`absolute bottom-0 mb-2 flex w-full items-center justify-center ${
-        role === "send" ? "hidden" : null
-      }`}
-    >
+    <footer className="absolute bottom-0 mb-2 flex w-full items-center justify-center">
       <div
         className={`${
-          pathname.includes("sign-up") || pathname.includes("sign-in")
+          pathname.includes("sign-up") ||
+          pathname.includes("sign-in") ||
+          role === "send"
             ? "hidden"
             : null
         } space-x-1`}
