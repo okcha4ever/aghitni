@@ -5,5 +5,5 @@ export default authMiddleware({
 });
 
 export const config = {
-  matcher: ["/send-help(.*)", "/need-help(.*)", "/"],
+  matcher: [ "/need-help(.*)", "/"],
 };
