@@ -1,6 +1,4 @@
-import React from "react";
-import Image from "next/image";
-import AghitniLogo from "./AghitniLogo";
+
 const SendHelp = () => {
   return (
     <section className="container m-3 mx-auto flex-col items-center justify-between">
