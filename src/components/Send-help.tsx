@@ -70,7 +70,7 @@ const SendHelp = () => {
                   />
                 </svg>
               </div>
-              <div className="opacity-20">
+              <div className="opacity-20 space-y-5">
                 <p className="flex flex-row items-center justify-center  text-green-700">
                   <span>
                     <svg
