@@ -10,5 +10,10 @@ export async function GET(req: NextRequest) {
     },
   });
 
-  return NextResponse.json(role, { status: 200 });
+  const returnedData = {
+    userId: role?.userId || userId,
+    role: role?.role || null,
+  };
+
+  return NextResponse.json(returnedData, { status: 200 });
 }
