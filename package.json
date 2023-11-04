@@ -17,6 +17,7 @@
     "@t3-oss/env-nextjs": "^0.7.1",
     "@tanstack/react-query": "^5.4.3",
     "axios": "^1.6.0",
+    "lucide-react": "^0.292.0",
     "next": "^13.5.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",

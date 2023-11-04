@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
-const SignedIn = (userId: string | null) => {
+const SignedIn = (userId?: string | null) => {
   const handleRequest = async () => {
     const { data } = await axios.get(`/api/users/signed-in?userId=${userId}`);
     return data;
