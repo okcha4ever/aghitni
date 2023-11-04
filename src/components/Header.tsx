@@ -6,12 +6,13 @@ import { usePathname } from "next/navigation";
 
 const Header = () => {
   const pathname = usePathname();
-  const isNeedHelpPage = pathname === "/need-help";
-  const isSendHelpPage = pathname === "/send-help";
+  const isNeedHelpPage = pathname.includes("/need-help");
+  const isSendHelpPage = pathname.includes("/send-help");
 
   const focusButton = "rounded-full bg-green-700 px-7 py-2 sm:px-5 sm:py-2";
 
-  const inFocusButton = "rounded-full px-7 py-2 hover:bg-green-200 sm:px-5 sm:py-2";
+  const inFocusButton =
+    "rounded-full px-7 py-2 hover:bg-green-200 sm:px-5 sm:py-2";
 
   return (
     <center className="w-full">

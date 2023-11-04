@@ -1,18 +1,35 @@
-import React from "react";
-import Image from "next/image";
-import AghitniLogo from "./AghitniLogo";
+// Modified cards that are not completed
+// todo: Oussama, modify the cards when they are completed to look the same
+
 const SendHelp = () => {
   return (
     <section className="container m-3 mx-auto flex-col items-center justify-between">
       <main className="flex flex-col items-center justify-center sm:mt-5 lg:mt-10">
-
         <div className="mt-15 flex flex-wrap items-center justify-center gap-6 p-10 sm:mx-5">
           {[1, 2, 3].map((index) => (
             <div
               key={index}
-              className="w-fit rounded-lg bg-gray-300 p-5 px-5 text-center font-bold shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] sm:w-1/2 sm:px-5 md:w-1/3 lg:w-1/4"
+              className="w-fit space-y-5 rounded-lg bg-gray-300 p-5 px-5 text-center font-bold shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] sm:w-1/2 sm:px-5 md:w-1/3 lg:w-1/4"
             >
-              <h1 className=" inli text-2xl text-black">
+              <p className="flex flex-row items-center justify-center  text-green-700">
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="h-6 w-6"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+                7533 street AlQueds.
+              </p>
+
+              <h1 className="text-2xl text-black">
                 <div className="flex items-center justify-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -32,28 +49,7 @@ const SendHelp = () => {
                 Needs: supllies, medicines, blankets
               </h1>
 
-              <br />
-              <p className="text-left text-green-700">
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-6 w-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </span>
-                Location: 7533 street AlQueds.
-              </p>
-              <button className="m-5 rounded-full bg-red-500 px-4 py-2 font-bold text-white hover:bg-red-700 ">
-                Help
-              </button>
-              <p className="text-left text-center text-sm font-light">
+              <p className="flex w-full justify-end text-left text-sm font-light">
                 Date: 11/23/2020
               </p>
             </div>
@@ -115,15 +111,8 @@ const SendHelp = () => {
                   </span>
                   Location: 7533 street AlQueds.
                 </p>
-                <button
-                  className="m-5 rounded-full bg-red-500 px-4 py-2 font-bold text-white  "
-                  disabled={true}
-                >
-                  Help
-                </button>
-                <p className="text-left text-center text-sm font-light">
-                  Date: 11/23/2020
-                </p>
+
+                <p className="text-left text-sm font-light">Date: 11/23/2020</p>
               </div>
             </div>
           ))}
