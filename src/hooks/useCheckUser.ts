@@ -5,6 +5,8 @@ import axios from "axios";
 //   role: string
 // }
 
+// userId
+
 const useCheckUser = async (userId: string | null | undefined) => {
   try {
     const response = await axios.get(`/api/users/signed-in?userId=${userId}`);
