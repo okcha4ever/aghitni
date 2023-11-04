@@ -8,7 +8,7 @@ const Header = () => {
   const pathname = usePathname();
 
   // --- Get userId
-  const { isLoaded, userId } = useAuth();
+  const { userId } = useAuth();
   const { user, isLoading } = SignedIn(userId);
   // -- Get Role
   const role = !isLoading && user?.role;

@@ -8,7 +8,7 @@ import { redirect } from "next/navigation";
 // todo: Oussama, modify the cards when they are completed to look the same
 
 const SendHelp = () => {
-  const { isLoaded, userId } = useAuth();
+  const { userId } = useAuth();
   const { user, isLoading } = SignedIn(userId);
   if (!isLoading) {
     if (user?.role !== "send") {

@@ -9,7 +9,7 @@ export default function Page() {
       <main className="flex flex-col items-center justify-center sm:flex-row sm:space-x-20">
         <AghitniLogo width={120} />
         <div className="h-screen pt-10">
-          <SignIn appearance={simple as any} />
+          <SignIn />
         </div>
       </main>
     </div>
