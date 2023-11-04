@@ -1,9 +1,14 @@
+import axios from "axios";
+
 const useCheckUser = async (userId: string | null | undefined) => {
-  const response = await fetch(
-    `http://localhost:3000/api/users/signed-in?userId=${userId}`,
-  );
-  const data = await response.json();
-  return data;
+  await axios
+    .get(`/api/users/signed-in?userId=${userId}`)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((err) => {
+      console.log("Something went wrong in useCheckUser.tsx custom hook");
+    });
 };
 
 export default useCheckUser;

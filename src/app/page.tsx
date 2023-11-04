@@ -15,6 +15,8 @@ export default async function HomePage() {
   }
 
   return (
-    <main className="flex flex-col items-center justify-center pt-10 text-xl text-black"></main>
+    <main className="flex flex-col items-center justify-center pt-10 text-xl text-black">
+      hello
+    </main>
   );
 }
