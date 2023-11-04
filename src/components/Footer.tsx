@@ -1,13 +1,21 @@
 "use client";
+import { useUser } from "@clerk/nextjs";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import SignedIn from "./Fetchers/users/SignedIn";
 
 const Footer = () => {
   const pathname = usePathname();
+  const { user: clerkUser, isLoaded } = useUser();
+
+  const { user, isLoading } = SignedIn(clerkUser?.id);
+  const role = !isLoading && isLoaded && user ? user.role : "none";
+
   return (
     <footer
-      className={`absolute bottom-0 mb-2 flex w-full items-center justify-center `}
+      className={`absolute bottom-0 mb-2 flex w-full items-center justify-center ${
+        role === "send" ? "hidden" : null
+      }`}
     >
       <div
         className={`${
