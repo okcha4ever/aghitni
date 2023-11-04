@@ -1,27 +1,11 @@
 import React from "react";
 import Image from "next/image";
+import AghitniLogo from "./AghitniLogo";
 const SendHelp = () => {
   return (
     <section className="container m-3 mx-auto flex-col items-center justify-between">
-      <header className="container mx-auto flex flex-col items-center justify-center bg-black ">
-        <Image
-          className=" w-32"
-          src="/20231102_222513.png"
-          width={200}
-          height={100}
-          alt="Aghitni Logo"
-        />
-      </header>
-      <main className="flex flex-col justify-center items-center lg:mt-10 sm:mt-5">
-        <h1 className="font-extrabold text-2xl">Choose Your State</h1>
-        <div className="flex justify-between rounded-full bg-gray-300 shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)] sm:w-96 sm:px-10 sm:py-2">
-          <button className="rounded-full bg-green-700 px-7 py-2 sm:px-5 sm:py-2">
-            Need Help
-          </button>
-          <button className="hover-bg-green-200 rounded-full px-7 py-2 sm:px-5 sm:py-2">
-            Send Help
-          </button>
-        </div>
+      <main className="flex flex-col items-center justify-center sm:mt-5 lg:mt-10">
+
         <div className="mt-15 flex flex-wrap items-center justify-center gap-6 p-10 sm:mx-5">
           {[1, 2, 3].map((index) => (
             <div
