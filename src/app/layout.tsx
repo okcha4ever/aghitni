@@ -5,6 +5,7 @@ import Profile from "@/components/Profile";
 import ReactQueryProvider from "@/providers/ReactQueryProvider";
 import "@/styles/globals.css";
 import { Inter } from "next/font/google";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
             <Profile />
             <Header />
             {children}
+            <Footer />
           </ReactQueryProvider>
         </body>
       </html>

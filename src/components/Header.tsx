@@ -9,7 +9,7 @@ const Header = () => {
 
   // --- Get userId
   const { isLoaded, userId } = useAuth();
-  const { user, isLoading }: any = isLoaded || userId ? SignedIn(userId) : null;
+  const { user, isLoading } = SignedIn(userId);
   // -- Get Role
   const role = !isLoading && user?.role;
   // ---
@@ -17,7 +17,8 @@ const Header = () => {
   const showHeaderWhen =
     pathname.includes("/need-help") || pathname.includes("/send-help");
 
-  const focusButton = "rounded-full bg-green-700 px-7 py-2 sm:px-5 sm:py-2";
+  const focusButton =
+    "rounded-full bg-green-700 px-7 ease-in-out duration-500 py-2 sm:px-5 sm:py-2";
 
   const inFocusButton =
     "rounded-full px-7 py-2 hover:bg-green-200 ease-in-out duration-200 sm:px-5 sm:py-2";

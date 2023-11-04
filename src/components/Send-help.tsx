@@ -9,9 +9,6 @@ import { redirect } from "next/navigation";
 
 const SendHelp = () => {
   const { isLoaded, userId } = useAuth();
-  if (!isLoaded || !userId) {
-    return null;
-  }
   const { user, isLoading } = SignedIn(userId);
   if (!isLoading) {
     if (user?.role !== "send") {
