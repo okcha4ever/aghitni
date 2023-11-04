@@ -1,9 +1,10 @@
 import { ClerkProvider } from "@clerk/nextjs";
 
+import Header from "@/components/Header";
+import Profile from "@/components/Profile";
+import ReactQueryProvider from "@/providers/ReactQueryProvider";
 import "@/styles/globals.css";
 import { Inter } from "next/font/google";
-import ReactQueryProvider from "@/providers/ReactQueryProvider";
-import Header from "@/components/Header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={`font-sans ${inter.variable}`}>
           <ReactQueryProvider>
+            <Profile />
             <Header />
             {children}
           </ReactQueryProvider>

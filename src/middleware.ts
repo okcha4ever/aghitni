@@ -1,9 +1,9 @@
 import { authMiddleware } from "@clerk/nextjs";
-
 export default authMiddleware({
-  publicRoutes: ["/"], // Make the "/" route accessible to both signed-in and signed-out users.
+  // "/" will be accessible to all users
+  publicRoutes: ["/", "/need-help"],
 });
 
 export const config = {
-  matcher: ["/send-help(.*)", "/need-help(.*)", "/"],
+  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
 };
