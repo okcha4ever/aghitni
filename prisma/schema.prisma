@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model Post {
+    id          String      @id @default(uuid())
+    text        String
+    location    String
+    status      StatusType?
+    createdDate DateTime    @default(now())
+}
+
+enum StatusType {
+    inProgress
+    completed
+    none
+}
+
+model Role {
+    userId String   @id @unique
+    role   RoleType // either "need" or "send"
+}
+
+enum RoleType {
+    send
+    need
+}
