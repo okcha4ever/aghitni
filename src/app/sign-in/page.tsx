@@ -1,7 +1,7 @@
 // Sign in page
 import AghitniLogo from "@/components/AghitniLogo";
 import SignIn from "@/components/sign-in/SignIn";
-import { simple } from "@/helpers/ClerkAppearance";
+// import { simple } from "@/helpers/ClerkAppearance";
 
 export default function Page() {
   return (

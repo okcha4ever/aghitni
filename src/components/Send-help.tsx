@@ -1,17 +1,14 @@
 "use client";
-// Modified cards that are not completed
+import { useSession } from "next-auth/react";
 
-import { useAuth } from "@clerk/nextjs";
 import SignedIn from "./Fetchers/users/SignedIn";
 import { redirect } from "next/navigation";
 
-// todo: Oussama, modify the cards when they are completed to look the same
-
 const SendHelp = () => {
-  const { userId } = useAuth();
-  const { user, isLoading } = SignedIn(userId);
+  const { data: session } = useSession();
+  const { user: data, isLoading } = SignedIn(session?.user.id);
   if (!isLoading) {
-    if (user?.role !== "send") {
+    if (data?.role !== "send") {
       redirect("/need-help");
     }
   }

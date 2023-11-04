@@ -1,12 +1,13 @@
-import { ClerkProvider } from "@clerk/nextjs";
-import { Toaster } from "sonner";
+// import { ClerkProvider } from "@clerk/nextjs";
 
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Profile from "@/components/Profile";
+import MySessionProvider from "@/providers/MySessionProvider";
 import ReactQueryProvider from "@/providers/ReactQueryProvider";
 import "@/styles/globals.css";
+import { Session } from "next-auth";
 import { Inter } from "next/font/google";
-import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,21 +22,23 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { session: Session };
 }) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <ReactQueryProvider>
-          <body className={`font-sans ${inter.variable}`}>
+    <html lang="en">
+      <body className={`font-sans ${inter.variable}`}>
+        <MySessionProvider session={params.session}>
+          <ReactQueryProvider>
             <Profile />
             <Header />
             {children}
-            <Toaster />
-          </body>
-        </ReactQueryProvider>
-      </html>
-    </ClerkProvider>
+            <Footer />
+          </ReactQueryProvider>
+        </MySessionProvider>
+      </body>
+    </html>
   );
 }

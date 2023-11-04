@@ -41,7 +41,8 @@ export const authOptions: NextAuthOptions = {
           image: profile.picture,
           email: profile.email,
           name: profile.name,
-          createdAt: new Date(),
+          // createdAt: new Date(),
+          emailVerified: profile.email_verified,
         };
       },
     }),
