@@ -1,4 +1,5 @@
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "sonner";
 
 import Header from "@/components/Header";
 import Profile from "@/components/Profile";
@@ -26,14 +27,14 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`font-sans ${inter.variable}`}>
-          <ReactQueryProvider>
+        <ReactQueryProvider>
+          <body className={`font-sans ${inter.variable}`}>
             <Profile />
             <Header />
             {children}
-            <Footer />
-          </ReactQueryProvider>
-        </body>
+            <Toaster />
+          </body>
+        </ReactQueryProvider>
       </html>
     </ClerkProvider>
   );
