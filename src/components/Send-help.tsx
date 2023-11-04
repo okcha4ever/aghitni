@@ -14,7 +14,7 @@ const SendHelp = () => {
   }
   const { user, isLoading } = SignedIn(userId);
   if (!isLoading) {
-    if (user.role !== "send") {
+    if (user?.role !== "send") {
       redirect("/need-help");
     }
   }

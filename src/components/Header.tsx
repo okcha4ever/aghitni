@@ -15,7 +15,7 @@ const Header = () => {
   }
   // * get user' role (need || send)
   const { user, isLoading } = SignedIn(userId);
-  const role = !isLoading && user.role;
+  const role = !isLoading && user?.role;
   // ---
 
   const showHeaderWhen =
