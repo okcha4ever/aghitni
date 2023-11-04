@@ -63,12 +63,13 @@ model Session {
 }
 
 model User {
-    id       String    @id @default(cuid())
-    name     String?
-    email    String?   @unique
-    image    String?
-    accounts Account[]
-    sessions Session[]
+    id            String    @id @default(cuid())
+    name          String?
+    email         String?   @unique
+    image         String?
+    emailVerified Boolean?
+    accounts      Account[]
+    sessions      Session[]
 }
 
 model VerificationToken {

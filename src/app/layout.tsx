@@ -1,4 +1,4 @@
-import { ClerkProvider } from "@clerk/nextjs";
+// import { ClerkProvider } from "@clerk/nextjs";
 
 import Header from "@/components/Header";
 import Profile from "@/components/Profile";
@@ -6,6 +6,9 @@ import ReactQueryProvider from "@/providers/ReactQueryProvider";
 import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
+import { Session } from "next-auth";
+import { SessionProvider } from "next-auth/react";
+import MySessionProvider from "@/providers/MySessionProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,21 +23,23 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { session: Session };
 }) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className={`font-sans ${inter.variable}`}>
+    <html lang="en">
+      <body className={`font-sans ${inter.variable}`}>
+        <MySessionProvider session={params.session}>
           <ReactQueryProvider>
             <Profile />
             <Header />
             {children}
             <Footer />
           </ReactQueryProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+        </MySessionProvider>
+      </body>
+    </html>
   );
 }

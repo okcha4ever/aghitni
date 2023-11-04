@@ -1,17 +1,18 @@
 "use client";
-import { useAuth } from "@clerk/nextjs";
+// import { useAuth } from "@clerk/nextjs";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import AghitniLogo from "./AghitniLogo";
 import SignedIn from "./Fetchers/users/SignedIn";
+import { useSession } from "next-auth/react";
 const Header = () => {
   const pathname = usePathname();
 
   // --- Get userId
-  const { userId } = useAuth();
-  const { user, isLoading } = SignedIn(userId);
-  // -- Get Role
-  const role = !isLoading && user?.role;
+  const { data: session } = useSession();
+  const { user: data, isLoading } = SignedIn(session?.user.id);
+  // // -- Get Role
+  const role = !isLoading && data?.role;
   // ---
 
   const showHeaderWhen =
@@ -30,9 +31,7 @@ const Header = () => {
           <AghitniLogo width={120} className={"float-right flex justify-end"} />
         </div>
         <div
-          className={`flex justify-between rounded-full bg-gray-300 ${
-            role === "send" ? "sm:w-80" : null
-          } sm:px-3 sm:py-2  `}
+          className={`flex justify-between rounded-full bg-gray-300 sm:px-3 sm:py-2  `}
         >
           <Link href="/need-help">
             <button
