@@ -1,7 +1,23 @@
+"use client";
 // Modified cards that are not completed
+
+import { useAuth } from "@clerk/nextjs";
+import SignedIn from "./Fetchers/users/SignedIn";
+import { redirect } from "next/navigation";
+
 // todo: Oussama, modify the cards when they are completed to look the same
 
 const SendHelp = () => {
+  const { isLoaded, userId } = useAuth();
+  if (!isLoaded || !userId) {
+    return null;
+  }
+  const { user, isLoading } = SignedIn(userId);
+  if (!isLoading) {
+    if (user.role !== "send") {
+      redirect("/need-help");
+    }
+  }
   return (
     <section className="container m-3 mx-auto flex-col items-center justify-between">
       <main className="flex flex-col items-center justify-center sm:mt-5 lg:mt-10">
