@@ -2,13 +2,7 @@
 import { ArrowLeftCircleIcon } from "lucide-react";
 import Link from "next/link";
 
-export default function GlobalError({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string };
-  reset: () => void;
-}) {
+export default function GlobalError() {
   return (
     <html>
       <body className="flex items-center justify-center py-5 font-bold">

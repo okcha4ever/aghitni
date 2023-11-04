@@ -7,7 +7,7 @@ export default async function HomePage() {
 
   const userId: string | undefined = user?.id;
 
-  let data = await useCheckUser(userId);
+  const data = await useCheckUser(userId);
   if (data?.role !== "send") {
     redirect("/need-help");
   } else {
