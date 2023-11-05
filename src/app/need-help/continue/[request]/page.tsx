@@ -14,7 +14,7 @@ const page = ({ params }: { params: { request: string } }) => {
           {decodeURI(capitalizedRequest).replace("%26", "&")}
         </span>
       </div>
-      <Form />
+      <Form text={capitalizedRequest} />
     </main>
   );
 };

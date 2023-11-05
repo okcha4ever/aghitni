@@ -63,7 +63,7 @@ const SendHelp = () => {
                         />
                       </svg>
                     </div>
-                    Needs: {post.text}
+                    Needs: {decodeURI(post.text).replace("%26", "&")}
                   </h1>
 
                   <p className="flex w-full justify-end text-left text-sm font-light">
@@ -122,7 +122,7 @@ const SendHelp = () => {
                           />
                         </svg>
                       </div>
-                      Needs: {post.text}
+                      Needs: {decodeURI(post.text).replace("%26", "&")}
                     </h1>
                     <br />
 

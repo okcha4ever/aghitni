@@ -16,6 +16,9 @@ model Post {
     location    String
     status      StatusType?
     createdDate DateTime    @default(now())
+
+    name        String?
+    phoneNumber String?
 }
 
 enum StatusType {
