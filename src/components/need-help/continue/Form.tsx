@@ -2,6 +2,7 @@
 import { toast } from "sonner";
 import useInput from "@/hooks/use-input"; // Import your custom hook
 import AddPost from "@/components/Fetchers/posts/AddPost";
+import { redirect } from "next/navigation";
 
 const Form = ({ text }: { text: string }) => {
   // Use the custom hook for each input
@@ -22,8 +23,9 @@ const Form = ({ text }: { text: string }) => {
       e.preventDefault();
       toast("Please fill in all fields correctly.");
     } else {
-      addPost();
       toast("Done. We are coming for you");
+      addPost();
+      redirect("/");
     }
   };
 
