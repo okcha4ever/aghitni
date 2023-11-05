@@ -25,7 +25,7 @@ const AddPost = ({
   const { mutateAsync: addPost, status } = useMutation({
     mutationKey: ["add-post"],
     mutationFn: handleRequest,
-    onSuccess: async () => {
+    onSuccess: () => {
       toast("successfully added post");
     },
   });
