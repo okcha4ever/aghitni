@@ -14,7 +14,7 @@ const Footer = () => {
 
   return (
     <footer
-      className={`absolute bottom-0 mb-2 flex w-full items-center justify-center ${
+      className={`mb-2 flex w-full items-center justify-center ${
         pathname.includes("sign-up") || pathname.includes("sign-in")
           ? "hidden"
           : null
