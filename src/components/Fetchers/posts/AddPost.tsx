@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useMutation } from "@tanstack/react-query";
-import { redirect } from "next/navigation";
+import axios from "axios";
+import { toast } from "sonner";
 
 const AddPost = ({
   text,
@@ -25,6 +25,9 @@ const AddPost = ({
   const { mutateAsync: addPost, status } = useMutation({
     mutationKey: ["add-post"],
     mutationFn: handleRequest,
+    onSuccess: async () => {
+      toast("successfully added post");
+    },
   });
   return { addPost, status };
 };
