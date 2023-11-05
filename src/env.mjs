@@ -27,6 +27,7 @@ export const env = createEnv({
     NEXT_PUBLIC_CLERK_SIGN_UP_URL: z.string().default("/sign-up"),
     NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL: z.string().default("/"),
     NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL: z.string().default("/"),
+    NEXT_PUBLIC_SECRET: z.string().default("51e350bfc2492baa6d934050b528f197"),
     // Add the new variables
   },
   runtimeEnv: {
@@ -44,6 +45,7 @@ export const env = createEnv({
     // Add the new runtime variables
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+    NEXT_PUBLIC_SECRET: process.env.NEXT_PUBLIC_SECRET,
   },
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
   emptyStringAsUndefined: true,
