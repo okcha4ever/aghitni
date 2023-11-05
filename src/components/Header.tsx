@@ -11,7 +11,7 @@ const Header = () => {
   // --- Get userId
   const { data: session } = useSession();
   const { user: data, isLoading } = SignedIn(session?.user.id);
-  // // -- Get Role
+  // -- Get Role
   const role = !isLoading && data?.role;
   // ---
 
@@ -44,7 +44,7 @@ const Header = () => {
           </Link>
           <Link
             href="/send-help"
-            className={`${role !== "send" ? "hidden" : null}`}
+            className={`${role !== "send" && role === null ? "hidden" : null}`}
           >
             <button
               className={
