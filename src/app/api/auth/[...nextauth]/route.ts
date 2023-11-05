@@ -47,6 +47,7 @@ const authOptions: NextAuthOptions = {
       },
     }),
   ],
+  secret: env.NEXT_PUBLIC_SECRET,
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
